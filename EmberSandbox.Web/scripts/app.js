@@ -1,23 +1,23 @@
-App = Ember.Application.create({
-	rootElement : "#github-app"
-});
+App = Ember.Application.create();
 
-App.IndexRoute = Ember.Route.extend({
-  	model : function() {
-  		return [
-  			"Rob Conery",
-  			"Scott Hanselman",
-  			"Tom Dale",
-  			"Yehuda Katz",
-  			"Jon Galloway",
-  			"Phil Haack"
-  		];
-  	}  
-});
+//App.Store = DS.Store.extend({
+//	revision: 1,
+//	adapter: 'DS.FixtureAdapter'
+//})
 
-App.IndexController = Ember.ArrayController.extend({
-	renderedOn: function() {
-		return new Date();
-	}.property
+App.Router.map(function () {
+	this.route('about');
+	this.route('posts');
 })
+
+//App.Post = DS.Model.extend({
+//	title: DS.attr('string'),
+//	author: DS.attr('string'),
+//	intro: DS.attr('string'),
+//	extended: DS.attr('string'),
+//	publishedAt: DS.attr('date')
+//});
+
+
+
 
